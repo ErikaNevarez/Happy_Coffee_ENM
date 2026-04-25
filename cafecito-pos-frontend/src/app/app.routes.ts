@@ -1,0 +1,29 @@
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  {
+    path: '',
+    loadComponent: () =>
+      import('./sale/sale-page.component').then((m) => m.SalePageComponent),
+  },
+  {
+    path: 'admin/products',
+    loadComponent: () =>
+      import('./admin/admin-products.component').then(
+        (m) => m.AdminProductsComponent,
+      ),
+  },
+  {
+    path: 'admin/customers',
+    loadComponent: () =>
+      import('./admin/admin-customers.component').then(
+        (m) => m.AdminCustomersComponent,
+      ),
+  },
+  // Compatibilidad con URLs antiguas
+  { path: 'products', redirectTo: '', pathMatch: 'full' },
+  { path: 'checkout', redirectTo: '', pathMatch: 'full' },
+  { path: 'cart', redirectTo: '', pathMatch: 'full' },
+  { path: 'customers/new', redirectTo: 'admin/customers', pathMatch: 'full' },
+  { path: '**', redirectTo: '' },
+];
