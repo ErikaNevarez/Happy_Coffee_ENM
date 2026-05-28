@@ -11,8 +11,13 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./home/home-page.component').then((m) => m.HomePageComponent),
   },
-    {
+  {
     path: 'sale',
+    loadComponent: () =>
+      import('./sale/sale-page.component').then((m) => m.SalePageComponent),
+  },
+  {
+    path: 'checkout',
     loadComponent: () =>
       import('./sale/sale-page.component').then((m) => m.SalePageComponent),
   },
