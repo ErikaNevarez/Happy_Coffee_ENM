@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "cafecito-pos-frontend": {
+    "frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -64,10 +64,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "cafecito-pos-frontend:build:production"
+              "buildTarget": "frontend:build:production"
             },
             "development": {
-              "buildTarget": "cafecito-pos-frontend:build:development"
+              "buildTarget": "frontend:build:development"
             }
           },
           "defaultConfiguration": "development"

@@ -20,8 +20,16 @@ export const routes: Routes = [
         (m) => m.AdminCustomersComponent,
       ),
   },
+  {
+    path: 'menu',
+    loadComponent: () =>
+      import('./products/product-list/product-list.component').then(
+        (m) => m.ProductListComponent,
+      ),
+  },
+  { path: 'home', redirectTo: '', pathMatch: 'full' },
   // Compatibilidad con URLs antiguas
-  { path: 'products', redirectTo: '', pathMatch: 'full' },
+  { path: 'products', redirectTo: 'menu', pathMatch: 'full' },
   { path: 'checkout', redirectTo: '', pathMatch: 'full' },
   { path: 'cart', redirectTo: '', pathMatch: 'full' },
   { path: 'customers/new', redirectTo: 'admin/customers', pathMatch: 'full' },

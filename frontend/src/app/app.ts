@@ -8,4 +8,9 @@ import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
   templateUrl: './app.html',
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
 })
-export class App {}
+export class App {
+
+  brandLogo: string = 'images/logoLetter.png';
+  brandLogo2: string = 'images/logoCup.png'; 
+
+}
