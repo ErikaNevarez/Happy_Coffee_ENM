@@ -7,8 +7,12 @@ import { Product } from '../models/product.model';
 interface ProductDraft {
   id?: string;
   name: string;
+  description: string;
   price: number | null;
   stock: number | null;
+  offer: boolean;
+  category: string;
+  imageUrl: string;
 }
 
 @Component({
@@ -215,13 +219,31 @@ export class AdminProductsComponent implements OnInit {
 
   openCreate() {
     this.formError.set('');
-    this.draft.set({ name: '', price: null, stock: null });
+    this.draft.set({
+    name: '',
+    description: '',
+    price: null,
+    stock: null,
+    offer: false,
+    category: '',
+    imageUrl: ''
+    });
   }
 
-  openEdit(p: Product) {
-    this.formError.set('');
-    this.draft.set({ id: p.id, name: p.name, price: p.price, stock: p.stock });
-  }
+
+openEdit(p: Product) {
+  this.formError.set('');
+  this.draft.set({
+    id: p.id,
+    name: p.name,
+    description: p.description,
+    price: p.price,
+    stock: p.stock,
+    offer: p.offer,
+    category: p.category,
+    imageUrl: p.imageUrl
+  });
+}
 
   closeDraft() {
     this.draft.set(null);
@@ -249,8 +271,12 @@ export class AdminProductsComponent implements OnInit {
 
     const payload = {
       name: d.name.trim(),
+      description: d.description.trim(),
       price: Number(d.price),
-      stock: Number(d.stock),
+      stock: Number(d.stock),       
+      offer: Boolean(d.offer),
+      category: d.category,
+      imageUrl: d.imageUrl
     };
 
     const obs = d.id

@@ -14,12 +14,12 @@ import { Product } from '../../models/product.model';
     <div class="stack">
       <div class="row-between">
         <div>
-          <h1>Catálogo</h1>
-          <p class="muted">Busca productos y agrégalos al carrito.</p>
+          <h1>Menú</h1>
+          <p class="muted">Busca productos y agrégalos a la comanda.</p>
         </div>
         @if (cartService.cartItems().length > 0) {
           <a routerLink="/checkout" class="btn btn-primary">
-            Ir al carrito ({{ cartItemCount() }})
+            Ir a la comanda ({{ cartItemCount() }})
           </a>
         }
       </div>
@@ -53,6 +53,15 @@ import { Product } from '../../models/product.model';
         <div class="product-grid">
           @for (p of products(); track p.id) {
             <div class="product-card">
+
+              <div class="product-content">
+                <img
+                  [src]="p.imageUrl",
+                  [alt]="p.name"
+                  class="product-image"
+                />
+              </div>
+
               <div class="product-card__name">{{ p.name }}</div>
               <div class="product-card__price">\${{ p.price.toFixed(2) }}</div>
               <div
@@ -67,7 +76,7 @@ import { Product } from '../../models/product.model';
                 [disabled]="p.stock === 0"
                 (click)="add(p)"
               >
-                {{ p.stock === 0 ? 'Sin stock' : 'Agregar al carrito' }}
+                {{ p.stock === 0 ? 'Sin stock' : 'Agregar al comanda' }}
               </button>
               @if (justAddedId() === p.id) {
                 <span class="badge badge-success">✓ Agregado</span>

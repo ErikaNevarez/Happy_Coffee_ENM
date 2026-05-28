@@ -41,7 +41,7 @@ interface Ticket {
 
       <nav class="stepper">
         <span class="step" [class.active]="step() === 'cart'" [class.done]="isDone('cart')">
-          <span class="step__num">{{ isDone('cart') ? '✓' : '1' }}</span> Carrito
+          <span class="step__num">{{ isDone('cart') ? '✓' : '1' }}</span> Comanda
         </span>
         <span class="step-sep">—</span>
         <span class="step" [class.active]="step() === 'customer'" [class.done]="isDone('customer')">
@@ -57,18 +57,18 @@ interface Ticket {
         </span>
       </nav>
 
-      <!-- PASO 1: CARRITO -->
+      <!-- PASO 1: comanda -->
       @if (step() === 'cart') {
         <section class="card stack">
-          <h2>Tu carrito</h2>
+          <h2>Tu comanda</h2>
 
           @if (cartService.cartItems().length === 0) {
             <div class="empty-state">
               <div class="empty-state__icon">🛒</div>
               <h3>Aún no hay productos</h3>
-              <p>Agrega productos desde el catálogo para continuar.</p>
+              <p>Agrega productos desde el Menú para continuar.</p>
               <a routerLink="/products" class="btn btn-primary" style="margin-top:12px">
-                Ir al catálogo
+                Ir al Menú
               </a>
             </div>
           } @else {
@@ -184,7 +184,7 @@ interface Ticket {
           }
 
           <div class="row-between">
-            <button class="btn btn-ghost" (click)="step.set('cart')">← Volver al carrito</button>
+            <button class="btn btn-ghost" (click)="step.set('cart')">← Volver al comanda</button>
             <div class="inline">
               @if (!selectedCustomer()) {
                 <button class="btn btn-secondary" (click)="continueWithoutCustomer()">
@@ -310,7 +310,7 @@ interface Ticket {
           </div>
 
           <div class="row-between">
-            <a routerLink="/products" class="btn btn-ghost">Ir al catálogo</a>
+            <a routerLink="/products" class="btn btn-ghost">Ir al Menú</a>
             <button class="btn btn-primary" (click)="newSale()">
               + Nueva venta
             </button>
@@ -416,7 +416,7 @@ export class CheckoutPageComponent {
     const customer = this.selectedCustomer();
     if (customer) body.customerId = customer.id;
 
-    // Snapshot de nombres para errores (antes de limpiar el carrito)
+    // Snapshot de nombres para errores (antes de limpiar la comanda)
     const productNames = new Map(
       this.cartService.cartItems().map((i) => [i.product.id, i.product.name]),
     );
