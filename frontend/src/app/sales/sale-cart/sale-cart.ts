@@ -10,10 +10,10 @@ import { environment } from '../../../environment/environment';
   imports: [CommonModule],
   template: `
     <div class="sale-cart">
-      <h2>Carrito</h2>
+      <h2>Comanda</h2>
 
       @if (cartService.cartItems().length === 0) {
-        <p>El carrito está vacío.</p>
+        <p>La comanda está vacía.</p>
       }
 
       @if (cartService.cartItems().length > 0) {

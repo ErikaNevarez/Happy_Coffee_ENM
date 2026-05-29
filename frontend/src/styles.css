@@ -42,7 +42,7 @@ a { color: inherit; text-decoration: none; }
 .container {
   max-width: 1040px;
   margin: 0 auto;
-  padding: 24px;
+  padding: 5px;
 }
 
 .card {
@@ -167,7 +167,7 @@ a { color: inherit; text-decoration: none; }
 .app-header {
   background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 100%);
   border-bottom: 1px solid var(--surface-alt);
-  padding: 18px 0;
+  padding: 5px 0;
   position: sticky;
   top: 0;
   z-index: 30;
@@ -358,11 +358,46 @@ a { color: inherit; text-decoration: none; }
   gap: 10px;
   transition: border-color 0.15s, transform 0.15s;
 }
+
 .product-card:hover { border-color: #0a0b0c; transform: translateY(-2px); }
+.product-card__container { width: 100%; height: 180px; display: flex; justify-content: center; align-items: center; background-color: #EDEDED; border-bottom: 1px solid #A8B3A0; overflow: hidden }
+.product-card__img { width: 100%; height: 180ox; overflow: hidden; object-fit: cover; object-position: center; display: block; transition: transform 0.35s ease; }
 .product-card__name { font-weight: 700; font-size: 16px; }
 .product-card__price { font-size: 22px; font-weight: 700; color: var(--heading); }
 .product-card__stock { font-size: 12px; color: var(--text-muted); }
 .product-card__stock--out { color: var(--danger); }
+
+/* CONTENEDOR IMAGEN */
+.product-content {
+  width: 100%;
+  height: 180px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #EDEDED;
+  border-bottom: 1px solid #A8B3A0;
+
+  overflow: hidden;
+}
+
+/* IMAGEN */
+.product-image {
+  width: 100%;
+  height: 180ox;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+
+  transition: transform 0.35s ease;
+}
+
+/* HOVER IMAGEN */
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
 
 .customer-result {
   display: flex;
@@ -490,3 +525,24 @@ a { color: inherit; text-decoration: none; }
 .stack.gap-6 { gap: 6px; }
 .stack.gap-8 { gap: 8px; }
 .inline.gap-12 { gap: 12px; }
+
+.home-container {
+    position: relative;
+    width: 80%;
+    height: 80vh;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-image {
+    width: 100%;
+    height: 90%;
+    border-radius: 12px;
+    object-fit: cover;
+}

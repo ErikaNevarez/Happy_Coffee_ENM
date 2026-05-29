@@ -38,12 +38,12 @@ interface Ticket {
       <div class="row-between">
         <div>
           <h1>Venta</h1>
-          <p class="muted">Busca productos, agrégalos al carrito y cobra.</p>
+          <p class="muted">Busca productos, agrégalos a la comanda y cobra.</p>
         </div>
       </div>
 
       <div class="pos-grid">
-        <!-- CATÁLOGO -->
+        <!-- Menú -->
         <div class="stack">
           <input
             class="input"
@@ -98,14 +98,14 @@ interface Ticket {
           }
         </div>
 
-        <!-- CARRITO / CLIENTE / COBRO -->
+        <!-- comanda / CLIENTE / COBRO -->
         <aside class="pos-cart">
           <h2 style="margin:0">🛒 Venta actual</h2>
 
           @if (cart.cartItems().length === 0) {
             <div class="empty-state" style="padding:24px 8px">
               <div class="empty-state__icon">🛒</div>
-              <p>Agrega productos del catálogo para empezar la venta.</p>
+              <p>Agrega productos del Menú para empezar la venta.</p>
             </div>
           } @else {
             <div>
@@ -320,7 +320,7 @@ interface Ticket {
   `,
 })
 export class SalePageComponent implements OnInit {
-  // Catálogo
+  // Menú
   products = signal<Product[]>([]);
   query = signal('');
   loadingProducts = signal(true);
