@@ -71,6 +71,10 @@ const formatProduct = (doc) => {
   return {
     id: doc._id.toString(),
     name: doc.name,
+    imageUrl: doc.imageUrl, 
+    description: doc.description,
+    category: doc.category,
+    offer: doc.offer, 
     price: doc.price,
     stock: doc.stock,
     createdAt: doc.createdAt,

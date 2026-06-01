@@ -12,7 +12,7 @@ import { Customer } from '../../models/customer.model';
 function emailOrPhone(control: AbstractControl) {
   const value = control.value ?? '';
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^\+\d{7,15}$/;
+  const phoneRegex = /^\+?\d{7,15}$/; 
   if (emailRegex.test(value) || phoneRegex.test(value)) return null;
   return { emailOrPhone: true };
 }
@@ -25,7 +25,7 @@ function emailOrPhone(control: AbstractControl) {
     <div class="card stack" style="max-width:560px;margin:0 auto">
       @if (showTitle) {
         <div>
-          <h2>Nuevo cliente</h2>
+          <h2>Nuevo cliente</h2>  
           <p class="muted">
             Regístralo para aplicar descuentos por compras frecuentes.
           </p>
@@ -112,10 +112,11 @@ function emailOrPhone(control: AbstractControl) {
           } @else {
             <span></span>
           }
-          <button
+          <button  
             type="submit"
             class="btn btn-primary"
             [disabled]="form.invalid || loading"
+            (click)="onSubmit()"
           >
             {{ loading ? 'Guardando…' : 'Registrar cliente' }}
           </button>

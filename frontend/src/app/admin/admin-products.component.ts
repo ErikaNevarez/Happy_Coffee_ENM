@@ -106,6 +106,46 @@ interface ProductDraft {
                 maxlength="100"
               />
             </div>
+
+            <div class="stack" style="gap:6px">
+              <label class="muted" style="font-size:13px;font-weight:600">Descripción</label>
+              <input
+                class="input"
+                type="text"
+                placeholder="Ej. Descripción, ingredientes, sabores, etc."
+                [(ngModel)]="d.description"
+                name="description"
+                required
+                minlength="2"
+                maxlength="120"
+              />
+            </div>
+
+            <div class="stack" style="gap:6px">
+                <label class="muted" style="font-size:13px;font-weight:600">Categoría</label>
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Ej. bebidas calientes, bebidas frias, snacks o bakery"
+                  [(ngModel)]="d.category"
+                  name="category"
+                  required
+                  minlength="2"
+                  maxlength="60"
+                />
+              </div>
+
+              <div class="stack" style="gap:6px">
+                <label class="muted" style="font-size:13px;font-weight:600">Imagen</label>
+                <input
+                  class="input"
+                  type="text"
+                  placeholder="Url de la imagen"
+                  [(ngModel)]="d.imageUrl"
+                  name="imageUrl"
+                  />
+              </div>
+
             <div class="inline" style="gap:12px">
               <div class="stack" style="gap:6px;flex:1">
                 <label class="muted" style="font-size:13px;font-weight:600">Precio</label>
@@ -120,6 +160,7 @@ interface ProductDraft {
                   required
                 />
               </div>
+
               <div class="stack" style="gap:6px;flex:1">
                 <label class="muted" style="font-size:13px;font-weight:600">Stock</label>
                 <input
@@ -133,24 +174,27 @@ interface ProductDraft {
                   required
                 />
               </div>
+
+
+
             </div>
 
             @if (formError()) {
               <div class="alert alert-error">{{ formError() }}</div>
             }
 
-            <div class="row-between" style="margin-top:8px">
-              <button type="button" class="btn btn-ghost" (click)="closeDraft()">
-                Cancelar
-              </button>
-              <button
-                type="submit"
-                class="btn btn-primary"
-                [disabled]="saving() || !canSave(d)"
-              >
-                {{ saving() ? 'Guardando…' : (d.id ? 'Guardar cambios' : 'Crear producto') }}
-              </button>
-            </div>
+              <div class="row-between" style="margin-top:8px">
+                <button type="button" class="btn btn-ghost" (click)="closeDraft()">
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  [disabled]="saving() || !canSave(d)"
+                >
+                  {{ saving() ? 'Guardando…' : (d.id ? 'Guardar cambios' : 'Crear producto') }}
+                </button>
+              </div>
           </form>
         </div>
       </div>

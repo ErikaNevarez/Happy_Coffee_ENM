@@ -75,8 +75,9 @@ export const createCustomer = async (req, res) => {
 
     const customer = await Customer.create({ name, phoneOrEmail });
     res.status(201).json(formatCustomer(customer));
-  } catch (err) {
-    if (err.name === "ValidationError") {
+    } catch (err) {
+        console.error(err);
+      if (err.name === "ValidationError") {
       const details = Object.values(err.errors).map((e) => ({
         field: e.path,
         message: e.message,
