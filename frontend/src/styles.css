@@ -385,11 +385,16 @@ a { color: inherit; text-decoration: none; }
 /* IMAGEN */
 .product-image {
   width: 100%;
-  height: 180ox;
-  overflow: hidden;
+  height: 180px;
   object-fit: cover;
+  overflow: hidden;  
   object-position: center;
   display: block;
+  border-radius: 12px;
+
+      
+    
+
 
   transition: transform 0.35s ease;
 }
@@ -545,4 +550,5 @@ a { color: inherit; text-decoration: none; }
     height: 90%;
     border-radius: 12px;
     object-fit: cover;
+    overflow: hidden;
 }

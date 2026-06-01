@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 // Valida email o teléfono con formato +
 function isEmailOrPhone(value) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const phoneRegex = /^\+\d{7,15}$/;
+  const phoneRegex = /^\+?\d{7,15}$/;  
   return emailRegex.test(value) || phoneRegex.test(value);
 }
 
