@@ -1,0 +1,29 @@
+<header class="app-header">
+  <div class="app-header__inner">
+      <a routerLink="/home" class="logo-link">
+        <img [src]="brandLogo2" alt="Logo taza café" class="logo-cup" />
+      </a>
+
+      <a routerLink="/home" class="logo-link">
+        <img [src]="brandLogo" alt="Logo Cafecito Feliz" class="logo-text" />
+      </a>
+    <nav class="app-header__nav">
+      <a routerLink="/menu" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+        Menú
+      </a>
+      <a routerLink="/sale" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="nav-link">
+        Venta
+      </a>
+      <a routerLink="/admin/products" routerLinkActive="active" class="nav-link">
+        Productos
+      </a>
+      <a routerLink="/admin/customers" routerLinkActive="active" class="nav-link">
+        Clientes
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <router-outlet />
+</main>
