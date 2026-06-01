@@ -76,7 +76,7 @@ import { Product } from '../../models/product.model';
                 [disabled]="p.stock === 0"
                 (click)="add(p)"
               >
-                {{ p.stock === 0 ? 'Sin stock' : 'Agregar al comanda' }}
+                {{ p.stock === 0 ? 'Sin stock' : 'Agregar a la comanda' }}
               </button>
               @if (justAddedId() === p.id) {
                 <span class="badge badge-success">✓ Agregado</span>
