@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { CartService } from '../../services/cart.service';
-import { environment } from '../../../environments/environments';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-sale-cart',
