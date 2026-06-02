@@ -8,7 +8,7 @@ import { CartService } from '../services/cart.service';
 import { Product } from '../models/product.model';
 import { Customer } from '../models/customer.model';
 import { CustomerFormComponent } from '../customers/customer-form/customer-form';
-import { environment } from '../../environments/environments';
+import { environment } from '../../environments/environment';
 
 type PaymentMethod = 'cash' | 'card' | 'transfer';
 
