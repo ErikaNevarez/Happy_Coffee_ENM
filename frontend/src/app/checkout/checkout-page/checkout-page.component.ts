@@ -6,7 +6,7 @@ import { Router, RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { CustomerService } from '../../services/customers.service';
 import { Customer } from '../../models/customer.model';
-import { environment } from '../../../environments/environments';
+import { environment } from '../../../environments/environment';
 
 type Step = 'cart' | 'customer' | 'confirm' | 'ticket';
 type PaymentMethod = 'cash' | 'card' | 'transfer';
